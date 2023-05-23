@@ -17,7 +17,7 @@ export interface renderOptions {
 }
 
 export interface qrCodeSetting {
-  target: string;
+  url: string;
   version?: number;
   errorCorrectionLevel?: errorCorrectionLevel;
   renderOptions?: renderOptions;
@@ -25,18 +25,4 @@ export interface qrCodeSetting {
 
 export interface qrListSetting extends qrCodeSetting {
   title: string;
-  target: string;
 }
-
-const setting: qrListSetting[] = [
-  {
-    title: "Line Pay",
-    target: "123",
-  },
-  {
-    title: "Lin2e Pay",
-    target: "123",
-  },
-];
-
-export default setting;
