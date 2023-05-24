@@ -17,12 +17,25 @@ export interface renderOptions {
 }
 
 export interface qrCodeSetting {
-  url: string;
   version?: number;
   errorCorrectionLevel?: errorCorrectionLevel;
   renderOptions?: renderOptions;
 }
 
-export interface qrListSetting extends qrCodeSetting {
+interface TWQRP {
+  serviceName: string;
+  bankCode: string;
+  bankAccount: string;
   title: string;
 }
+
+interface Url {
+  url: string;
+  title: string;
+}
+
+interface TWQRPList extends qrCodeSetting, TWQRP {}
+
+interface UrlList extends qrCodeSetting, Url {}
+
+export type qrListSetting = TWQRPList | UrlList;
